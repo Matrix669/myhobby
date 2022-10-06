@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myHobby</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/03d89f6e91.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="main-page">
+    <header class="header section">
+        <nav class="nav">
+            <a class="nav-brand" href="#"> my<span class="color-text">hobby</span></a>
+            <button class="nav-burger-btn">
+                <div class="nav-burger-btn__box">
+                    <div class="nav-burger-btn__bars"></div>
+                </div>
+            </button>
+            <div class="nav-desktop">
+                <a class="nav-link nav-link-desktop" href="#badminton">badminton</a>
+                <a class="nav-link nav-link-desktop" href="#football">football</a>
+                <a class="nav-link nav-link-desktop" href="#programming">programming</a>
+            </div>
+            <div class="nav-mobile">
+                <a class="nav-link" href="#badminton">badminton</a>
+                <a class="nav-link" href="#football">football</a>
+                <a class="nav-link" href="#programming">programming</a>
+            </div>
+        </nav>
+        <div class="header__hero-img">
+            <div class="header__hero-img-shadow"></div>
+            <div class="header__hero-img-text">
+                <h1>my<span class="text">hobby</span></h1>
+                <a href="#badminton" class="header__hero-img-text-btn-link">poznaj mnie</a>
+            </div>
+            <a href="#badminton"><i class="fa-solid fa-chevron-down bounce-top "></i></a>
+        </div>
+    </header>
+    <main>
+        <section class="hobby section-padding ">
+            <div class="wrapper">
+                <div id="badminton" class="hobby__section section">
+                    <h2 class="hobby__heading line">badminton</h2>
+                    <div class="hobby__section--text">
+                        <img src="./img/badminton-4139024_640.jpg" alt="badminton">
+                        <div class="hobby__section--text-description">
+                            <h3 class="hobby__section--text-description--heading">Najszybszy sport na świecie</h3>
+                            <p class="hobby__section--text-description--p">2- lub 4-osobowa dyscyplina sportowa. Gra
+                                polega na przebijaniu nad siatką lotki za pomocą rakietek. Lotka o masie od 4,74 g do
+                                5,50 g wykonana jest z korka pokrytego warstwą skóry i 16 piórek naturalnych lub z
+                                materiałów syntetycznych. Klasyczny mecz składa się z setów rozgrywanych do 21 punktów
+                                (wymagana jest przewaga dwóch punktów: jeżeli strony osiągną wynik 29:29, to seta
+                                wygrywa strona zdobywająca 30 punktów). Gra kończy się, gdy jeden z zawodników lub jedna
+                                z drużyn wygrywa dwa sety.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="football" class="hobby__section section">
+                    <h2 class="hobby__heading line">football</h2>
+                    <div class="hobby__section--text">
+                        <img src="./img/football-1486353_640-small.jpg" alt="boisko, biała piłka i w oddali bramka">
+                        <div class="hobby__section--text-description">
+                            <h3 class="hobby__section--text-description--heading">Jeden z najpopularniejszych sportów na
+                                świecie</h3>
+                            <p class="hobby__section--text-description--p">Gra zespołowa, w której dwie drużyny starają
+                                się zdobyć w określonym czasie jak najwięcej punktów poprzez wbicie piłki do bramki;
+                                najpopularniejsza dyscyplina sportowa z około 4 miliardami fanów na całym świecie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="programming" class="hobby__section section">
+                    <h2 class="hobby__heading line">programming</h2>
+                    <div class="hobby__section--text">
+                        <img src="./img/programming-1873854_640.png" alt="kod z javascriptu na monitorze">
+                        <div class="hobby__section--text-description">
+                            <h3 class="hobby__section--text-description--heading">Programowanie czyli myślenie logiczne
+                                i nie tylko</h3>
+                            <p class="hobby__section--text-description--p">Tworzenia programu
+                                komputerowego, który ma realizować określone zadania. Kod źródłowy jest napisany w
+                                języku programowania. Między programistami trwają debaty, czy programowanie komputerów
+                                jest sztuką, rzemiosłem czy procesem inżynieryjnym.</p>
+                            <p class="hobby__section--text-description--p">Bezpośrednią formą sztuki w tej
+                                dziedzinie jest demoscena oraz nowoczesne gry komputerowe.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__text"> &copy; <span class="footer__year"></span> Created by xyz </p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
