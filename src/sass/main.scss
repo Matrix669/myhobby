@@ -1,0 +1,540 @@
+@use 'colors' as *;
+@use 'animation' as *;
+@use 'components' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 140px;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+}
+
+// ==========================
+.nav {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 90px;
+	transition: background-color 0.6s;
+	z-index: 100;
+	&-burger-btn {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		padding: 1em;
+		background: none;
+		transform: translateX(0);
+		border: 1px solid transparent;
+		cursor: pointer;
+		z-index: 1000;
+		&:focus {
+			outline: none;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+		}
+
+		&:hover {
+			.nav-burger-btn__bars::after,
+			.nav-burger-btn__bars::before {
+				width: 100%;
+			}
+		}
+
+		&__box {
+			position: relative;
+			width: 40px;
+			height: 30px;
+		}
+
+		&__bars,
+		&__bars::before,
+		&__bars::after {
+			position: absolute;
+			right: 0;
+			height: 3px;
+			content: '';
+			background-color: $white;
+			transition: width 0.3s;
+		}
+
+		&__bars {
+			width: 100%;
+
+			&::after {
+				top: 13px;
+				width: 60%;
+			}
+
+			&::before {
+				top: 27px;
+				width: 30%;
+				transition-delay: 0.1s;
+			}
+		}
+	}
+
+	&-brand {
+		font-weight: bold;
+		color: $white;
+		text-decoration: none;
+		font-size: 2.2rem;
+		margin-left: 2em;
+		.color-text {
+			text-transform: uppercase;
+		}
+		&:hover .color-text {
+			color: $deep-heaven;
+		}
+	}
+	&-mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: $black;
+		transform: translateX(102%);
+		transition: transform 0.3s;
+		z-index: 10;
+	}
+	&--active {
+		transform: translateX(0);
+	}
+	&-link {
+		position: relative;
+		color: $white;
+		margin: 1em;
+		padding: 0.5em 0.5em;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: color 0.3s;
+		&:last-child {
+			padding: 0.5em 1em;
+		}
+		&:hover {
+			color: $deep-heaven;
+		}
+	}
+	&-desktop {
+		display: none;
+	}
+}
+
+// header
+.header {
+	position: relative;
+	height: 100vh;
+
+	text-align: center;
+	color: $white;
+
+	&__hero-img {
+		position: relative;
+		background-image: url('../../dist/img/running-track-1201014_640-small.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		z-index: 0;
+		height: 100%;
+		width: 100%;
+		&-shadow {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(53, 53, 53, 0.75);
+			z-index: -10;
+		}
+		&-text {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			height: 100%;
+			padding: 10px;
+			h1 {
+				font-size: 3.6rem;
+				text-transform: uppercase;
+				margin-bottom: 1em;
+				letter-spacing: 3px;
+				span {
+					color: $deep-heaven;
+				}
+			}
+			&-btn-link {
+				padding: 1em 2em;
+				color: $white;
+				text-decoration: none;
+				text-transform: uppercase;
+				border: 1px solid $deep-heaven;
+				border-radius: 6px;
+				transition: background-color 0.3s;
+				&:hover {
+					background-color: $on-hover;
+					border-color: $on-hover;
+				}
+			}
+		}
+		.fa-chevron-down {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			// padding: 0.5em;
+			transform: translateX(-50%);
+			font-size: 3rem;
+			color: $white;
+		}
+	}
+}
+// main
+
+// badminton
+.hobby {
+	&__heading {
+		position: relative;
+		margin-bottom: 2em;
+		font-size: 3rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: $black;
+		letter-spacing: 2px;
+	}
+	&__section {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin: 6em 0;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+		&--text {
+			&-description {
+				&--heading {
+					font-size: 2.4rem;
+					margin: 1em 0;
+				}
+				&--p {
+					&:last-child {
+						margin-top: 0.5em;
+					}
+				}
+			}
+		}
+	}
+}
+// contact
+.contact {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	&__form-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 1.5em;
+		&-label,
+		&-input {
+			width: 100%;
+			height: 40px;
+		}
+		&-txtarea {
+			font-family: 'Montserrat', sans-serif;
+			max-width: 100%;
+			min-width: 100%;
+			min-height: 100px;
+			margin-bottom: 1.5em;
+			padding: 0.5em;
+		}
+		&-input,
+		&-txtarea {
+			border: 1px solid $black;
+			border-radius: 6px;
+			font-size: 1.6rem;
+			&::placeholder {
+				color: $gray;
+			}
+		}
+		&-label {
+			font-size: 2.8rem;
+		}
+		&-input {
+			padding: 1em;
+		}
+	}
+	&__btn {
+		width: 100%;
+		padding: 1em 2em;
+		color: $white;
+		font-size: 18px;
+		background-color: $black;
+		border: none;
+		border-radius: 6px;
+		transition: color 0.3s, background-color 0.3s;
+		cursor: pointer;
+		&:hover {
+			background-color: $light-gray;
+			color: $black;
+		}
+	}
+}
+// footer
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2em;
+	color: $white;
+	height: 20%;
+	background-color: $black;
+	z-index: -10;
+	&__text,
+	&__number {
+		margin-bottom: 0.5em;
+	}
+	&__text {
+		margin-top: 0.5em;
+	}
+	&__contact-me {
+		text-align: center;
+		&--homework {
+			font-size: 1.8rem;
+			text-decoration: none;
+			margin-bottom: 1em;
+			color: $white;
+			transition: color 0.1s;
+			&:visited {
+				color: $deep-heaven;
+			}
+			&:hover {
+				color: $gray;
+			}
+		}
+	}
+	&__contacts {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		&-links {
+			margin-bottom: 1em;
+			li {
+				list-style: none;
+				font-size: 18px;
+				margin-bottom: 0.5em;
+				margin-left: 1.5em;
+			}
+			a {
+				color: $white;
+				text-decoration: none;
+				transition: color 0.1s;
+				&:visited {
+					color: $deep-heaven;
+				}
+				&:hover {
+					color: $gray;
+				}
+			}
+			&--title {
+				font-size: 2rem;
+				margin-bottom: 0.8em;
+			}
+		}
+	}
+}
+
+// ============ MEDIA =============
+@media (min-width: 414px) {
+	.hobby {
+		&__section {
+			&--text {
+				&-description {
+					&--heading {
+						font-size: 2.6rem;
+					}
+					&--p {
+						font-size: 1.8rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 576px) {
+	.nav {
+		&-brand {
+			font-size: 2.6rem;
+		}
+		&-link {
+			font-size: 2.4rem;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.nav {
+		&-link {
+			&:hover {
+				color: $white;
+			}
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 0;
+				bottom: 0;
+				border-bottom: 2px solid $deep-heaven;
+			}
+			&::before {
+				right: 50%;
+				transition: width 0.3s;
+			}
+			&::after {
+				left: 50%;
+				transition: width 0.3s;
+			}
+			&:hover::before,
+			&:hover::after {
+				width: 50%;
+			}
+		}
+		.active {
+			color: $deep-heaven;
+		}
+	}
+	.header {
+		&__hero-img {
+			&-text {
+				h1 {
+					font-size: 4.2rem;
+				}
+				&-btn-link {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+
+	.hobby {
+		&__section {
+			img {
+				min-width: 50%;
+				width: 100%;
+				object-fit: cover;
+			}
+			&--text {
+				&-description {
+					padding: 2em;
+					&--heading {
+						font-size: 4rem;
+						margin: 0.5em 0;
+					}
+					&--p {
+						font-size: 2.2rem;
+					}
+				}
+			}
+		}
+	}
+	.contact {
+		&__form-box {
+			&-label,
+			&-input {
+				width: 80%;
+				font-size: 2rem;
+			}
+			&-txtarea {
+				font-size: 20px;
+				max-width: 80%;
+				min-width: 80%;
+				min-height: 200px;
+				margin-bottom: 3em;
+			}
+		}
+		&__btn {
+			width: 85%;
+			font-size: 2.4rem;
+			border-radius: 10px;
+		}
+	}
+	.footer {
+		&__contacts {
+			&-links {
+				&--title {
+					font-size: 2.6rem;
+					text-align: center;
+				}
+				li {
+					font-size: 2rem;
+				}
+				&-list {
+					display: flex;
+					justify-content: center;
+					flex-wrap: wrap;
+					flex-shrink: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		&__hero-img {
+			background-image: url('../../dist/img/running-track-1201014_1920-big.jpg');
+			&-text {
+				h1 {
+					font-size: 5rem;
+				}
+			}
+		}
+	}
+	.hobby {
+		&__section {
+			&--text {
+				display: flex;
+				&-description {
+					padding: 2em;
+					display: flex;
+					justify-content: space-around;
+					flex-direction: column;
+				}
+			}
+		}
+		&__heading {
+			font-size: 3.6rem;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.nav {
+		&-burger-btn {
+			display: none;
+		}
+		&-desktop {
+			display: flex;
+		}
+	}
+}
