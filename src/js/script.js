@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const navLinks = document.querySelectorAll('.nav-link')
 	const footerYear = document.querySelector('.footer__year')
 	const nav = document.querySelector('.nav')
-	const navLinksDesktop = document.querySelectorAll('.nav-link-desktop')
 	const scrollSpySections = document.querySelectorAll('.section')
 
 	const handleNav = () => {
@@ -43,15 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
 					sections.push(section)
 					const activeSection = document.querySelector(`[href*="${sections[0].id}"]`)
 					if (activeSection) {
-						navLinksDesktop.forEach(link => link.classList.remove('active'))
+						navLinks.forEach(link => link.classList.remove('active'))
 						activeSection.classList.add('active')
 					} else {
-						navLinksDesktop.forEach(link => link.classList.remove('active'))
+						navLinks.forEach(link => link.classList.remove('active'))
 					}
 				}
 				if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
 					const lastSection = document.querySelector('a:last-child')
-					navLinksDesktop.forEach(link => link.classList.remove('active'))
+					navLinks.forEach(link => link.classList.remove('active'))
 					lastSection.classList.add('active')
 				}
 			})

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabele</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../../../dist/css/podstrony/tabele/main.min.css">
+</head>
+<body>
+    <h1>Tabele</h1>
+    
+    <table>
+        <th>Przedmiot</th>
+        <th>Ocena 1</th>
+        <th>Ocena 2</th>
+        <th>Ocena 3</th>
+        <th>Ocena 4</th>
+        <th>Średnia</th>
+        <tr>
+            <td>Język polski</td>
+            <td>5</td>
+            <td>4</td>
+            <td>5+</td>
+            <td>4-</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Matematyka</td>
+            <td>5</td>
+            <td>5</td>
+            <td>3+</td>
+            <td>4-</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Chemia</td>
+            <td>5</td>
+            <td>4</td>
+            <td>4+</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Biologia</td>
+            <td>5</td>
+            <td>5</td>
+            <td>3</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <table>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <tr>
+            <th>2</th>
+            <td>a</td>
+            <td style="text-align: center; background-color: tomato;" colspan="2">b, c</td>
+            <td>d</td>
+            <td>d</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>d</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+            <td style="text-align: center; background-color: gold" rowspan="2">j, o</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td>k</td>
+            <td>l</td>
+            <td>m</td>
+            <td>n</td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td style="text-align: center; background-color: lime;" colspan="3" rowspan="2">p, q, r, u, v, w</td>
+            <td>s</td>
+            <td>t</td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <td>y</td>
+            <td>z</td>
+        </tr>
+    </table>
+
+    <h2>Tablicowe bingo</h2>
+    <table class="table">
+        <tr>
+            <td style="background-color: red;">42</td>
+            <td>52</td>
+            <td style="background-color: red;">63</td>
+            <td style="background-color: red;">1</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td style="background-color: red;">38</td>
+            <td>69</td>
+            <td style="background-color: red;">67</td>
+            <td>35</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td style="background-color: red;">46</td>
+            <td>3</td>
+            <td>FREE</td>
+            <td>57</td>
+            <td style="background-color: red;">10</td>
+        </tr>
+        <tr>
+            <td style="background-color: red;">42</td>
+            <td style="background-color: red;">23</td>
+            <td style="background-color: red;">8</td>
+            <td>43</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td style="background-color: red;">4</td>
+            <td style="background-color: red;">74</td>
+            <td style="background-color: red;">77</td>
+            <td style="background-color: red;">2</td>
+            <td style="background-color: red;">80</td>
+        </tr>
+    </table>
+<br>
+
+    <table class="table-nr2">
+        <tr class="table-nr2__row">
+            <td></td>
+            <td colspan="7">Wymagania</td>
+        </tr>
+        <tr class="table-nr2__row">
+            <td></td>
+            <td>konieczne (ocena dopuszczająca)</td>
+            <td>podstawowe (ocena dostateczna)</td>
+            <td>rozszerzone (ocena dobra)</td>
+            <td>dopełniające (ocena bardzo dobra)</td>
+            <td>wykraczające (ocena celująca)</td>
+        </tr>
+        <tr class="table-nr2__row">
+            <td></td>
+            <td colspan="7">Uczeń</td>
+        </tr>
+        <tr style="text-align: center;">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td style="background-color: blue;" colspan="6"></td>
+        </tr>
+        <tr>
+            <td rowspan="7">
+                <img src="./../../../dist/img/podstrony/tabele/kwiatek.png" width="200px" alt="kwiatek">
+            </td>
+        </tr>
+        <tr class="table-nr2__row-cells">
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+        </tr>
+        <tr>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell merge" rowspan="3"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+        </tr>
+        <tr>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell merge" rowspan="3"></td>
+        </tr>
+        <tr>
+            <td class="table-nr2__cell merge" rowspan="3"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+        </tr>
+        <tr>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+        </tr>
+        <tr>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+            <td class="table-nr2__cell"></td>
+        </tr>
+    </table>
+</body>
+</html>

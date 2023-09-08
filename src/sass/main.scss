@@ -395,6 +395,7 @@ body {
 @media (min-width: 768px) {
 	.nav {
 		&-link {
+			font-size: 2.6rem;
 			&:hover {
 				color: $white;
 			}
@@ -500,6 +501,11 @@ body {
 }
 
 @media (min-width: 992px) {
+	.nav {
+		&-link {
+			font-size: 2.8rem;
+		}
+	}
 	.header {
 		&__hero-img {
 			background-image: url('../../dist/img/running-track-1201014_1920-big.jpg');
@@ -524,17 +530,6 @@ body {
 		}
 		&__heading {
 			font-size: 3.6rem;
-		}
-	}
-}
-
-@media (min-width: 1100px) {
-	.nav {
-		&-burger-btn {
-			display: none;
-		}
-		&-desktop {
-			display: flex;
 		}
 	}
 }

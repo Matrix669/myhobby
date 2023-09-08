@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 140px;
+}
+
+body {
+	background-color: #ddd;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+}
+
+table {
+	border: 1px solid #000;
+}
+
+td {
+	border: 2px dotted red;
+	padding: 10px;
+}
+
+th {
+	padding: 15px 10px;
+	background-color: royalblue;
+	color: #fff;
+	font-size: 1.5em;
+}
+
+.table td {
+	border: 1px solid #000;
+	text-align: center;
+	margin: 10px;
+}
+.table {
+	border: none;
+}
+
+.table-nr2 {
+	&__row {
+		background-color: orangered;
+		color: #fff;
+		text-align: center;
+	}
+	&__row-cells {
+		border: 1px solid #000;
+	}
+	&__cell {
+		padding: 1.5em;
+		border-left: 1px solid #000;
+		border-bottom: 1px solid #000;
+        border-top: none;
+        border-right: none;
+	}
+}
+
+.merge {
+	background-color: orangered;
+}

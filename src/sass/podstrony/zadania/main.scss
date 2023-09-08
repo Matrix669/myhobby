@@ -1,0 +1,160 @@
+@use '../../colors' as *;
+@use '../../components' as *;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 140px;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+}
+
+.tasks {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 2em 0;
+	padding: 0 2em;
+	flex-direction: column;
+	&__title {
+		position: relative;
+		padding: 1em 0;
+		text-align: center;
+		font-size: 3rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: $black;
+		letter-spacing: 2px;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 60%;
+			background-color: $on-hover;
+			height: 2px;
+			bottom: 20px;
+			left: 20%;
+		}
+	}
+	&__body {
+		text-align: center;
+		&-title {
+			position: relative;
+			font-size: 2rem;
+			font-weight: 300;
+			text-transform: uppercase;
+			color: $black;
+			letter-spacing: 2px;
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: -10px;
+				right: 5%;
+				width: 0;
+
+				height: 2px;
+				background-color: $on-hover;
+				transition: width 0.3s;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: -10px;
+				left: 5%;
+				width: 0;
+				height: 2px;
+				background-color: $on-hover;
+				transition: width 0.3s;
+			}
+		}
+		&--task {
+			&-photo {
+				width: 200px;
+				height: 200px;
+				margin-bottom: 1em;
+			}
+			padding: 1.5em;
+			margin: 2em 2em;
+			border: 3px dashed $deep-heaven;
+			cursor: pointer;
+			transition: border-color 0.3s;
+			&:hover {
+				border-color: $gray;
+			}
+			&:hover .tasks__body-title {
+				&::before,
+				&::after {
+					width: 100px;
+				}
+			}
+		}
+	}
+	.backbtn {
+		position: absolute;
+		left: 10%;
+		font-size: 1.8rem;
+		padding: 1em 2em;
+		margin: 1em;
+		text-decoration: none;
+		color: $black;
+		background-color: $white;
+        border: 2px solid $deep-heaven;
+		border-radius: 6px;
+		transition: background-color 0.3s, color 0.3s, border-right 0.3s, border-top 0.3s;
+		cursor: pointer;
+        &:hover {
+            background-color: $gray;
+        }
+	}
+}
+
+@media (min-width: 768px) {
+	.tasks {
+		&__title {
+			font-size: 4rem;
+		}
+		&__body {
+			&-title {
+				font-size: 2.4rem;
+			}
+		}
+		.backbtn {
+			border-bottom: 2px dashed $deep-heaven;
+			border-left: 2px dashed $deep-heaven;
+			border-right: 2px solid $white;
+			border-top: 2px solid $white;
+			&:hover {
+				border-right: 2px dashed $deep-heaven;
+				border-top: 2px dashed $deep-heaven;
+				border-bottom: 2px dashed $gray;
+				border-left: 2px dashed $gray;
+				background-color: $white;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.tasks {
+		&__body {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			&--task {
+				padding: 1em;
+				width: 300px;
+				height: 320px;
+			}
+		}
+	}
+}
