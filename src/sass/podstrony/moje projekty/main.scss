@@ -1,3 +1,6 @@
+@use '../../colors' as *;
+@use '../../components' as *;
+
 *,
 *::before,
 *::after {
@@ -15,4 +18,119 @@ html {
 body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
+}
+
+.project {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: 1em;
+	&-title {
+		position: relative;
+		padding: 1em 0;
+		font-size: 3rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: $black;
+		letter-spacing: 2px;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 60%;
+			background-color: $on-hover;
+			height: 2px;
+			bottom: 20px;
+			left: 20%;	
+			}
+		}
+
+	.card-section {
+		.card {
+			margin: 2em 1em;
+			width: 260px;
+			text-align: center;
+			box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.25);
+			transition: transform 0.3s;
+			// cursor: pointer;
+			&:hover {
+				transform: scale(1.15);
+			}
+			&-img {
+				width: 100%;
+				transition: transform 0.3s;
+				cursor: pointer;
+			}
+			&-title-container {
+				padding: 1em;
+				&__text {
+					font-weight: 300;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+	.backbtn {
+		position: absolute;
+		left: 10%;
+		font-size: 1.8rem;
+		padding: 1em 2em;
+		margin: 1em;
+		text-decoration: none;
+		color: $black;
+		background-color: $white;
+        border: 2px solid $deep-heaven;
+		border-radius: 6px;
+		transition: background-color 0.3s, color 0.3s, border-right 0.3s, border-top 0.3s;
+		cursor: pointer;
+        &:hover {
+            background-color: $gray;
+        }
+	}
+}
+
+
+// ================ MEDIA QUERIES ==============
+
+@media (min-width: 576px) {
+	.project {
+		.card-section {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.card {
+				width: 300px;
+				margin: 1em 1em;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.project {
+		.backbtn {
+			border-bottom: 2px dashed $deep-heaven;
+			border-left: 2px dashed $deep-heaven;
+			border-right: 2px solid $white;
+			border-top: 2px solid $white;
+			&:hover {
+				border-right: 2px dashed $deep-heaven;
+				border-top: 2px dashed $deep-heaven;
+				border-bottom: 2px dashed $gray;
+				border-left: 2px dashed $gray;
+				background-color: $white;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.project {
+		.card-section {
+			width: 70%;
+		}
+	}
 }
