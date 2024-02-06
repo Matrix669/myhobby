@@ -10,7 +10,7 @@ Uruchomienie strony:
 ### Opis
 Moja pierwsza, własna strona. Stworzyłem ją na zadanie do strony.
 ### Do zmiany:
-- nawigacja: zamiast 3 linki z hobby zamienić to w jeden link z tooltipem, gdzie będą hobby z sekcji. 
+- nawigacja: zamiast 3 linki z hobby zamienić to w jeden link z tooltipem, gdzie będą hobby z sekcji. Dzięki czemu nie będzie nawigacji mobilnej na desktopie.
 
 ### Nauczyłem się:
 - robić hero img
