@@ -6,3 +6,5 @@ Uruchomienie strony:
 `gulp`
 
 
+### Do zmiany:
+- nawigacja
